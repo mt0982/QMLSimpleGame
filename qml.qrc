@@ -6,5 +6,6 @@
         <file>MyPlatform.qml</file>
         <file>MyWorld.qml</file>
         <file>MyPlayer.qml</file>
+        <file>Image/background.jpg</file>
     </qresource>
 </RCC>

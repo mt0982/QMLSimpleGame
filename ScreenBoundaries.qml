@@ -9,26 +9,26 @@ Body {
     world: myWorld
 
     Box {
-        y: screen.height
-        width: screen.width
+        y: gameBackground.height
+        width: gameBackground.width
         height: 32
     }
 
     Box {
         y: -32
         height: 32
-        width: screen.width
+        width: gameBackground.width
     }
 
     Box {
         x: -32
         width: 32
-        height: screen.height
+        height: gameBackground.height
     }
 
     Box {
-        x: screen.width
+        x: gameBackground.width
         width: 32
-        height: screen.height
+        height: gameBackground.height
     }
 }
