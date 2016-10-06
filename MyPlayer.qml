@@ -5,6 +5,8 @@ PhysicsItem {
     id: player
     width: 40
     height: 40
+    bullet: true
+    sleepingAllowed: false
     bodyType: Body.Dynamic
     fixedRotation: true
     gravityScale: 0.3
@@ -17,7 +19,8 @@ PhysicsItem {
         height: player.height
         density: 1
         friction: 0.3
-        restitution: 0.5
+        restitution: 0.2
+        groupIndex: 1
     }
 
     Image {
@@ -29,25 +32,36 @@ PhysicsItem {
     Keys.onPressed: {
 
         /* Jump */
-        if (event.key == Qt.Key_W) {
+        if (event.key === Qt.Key_W) {
             console.log("EVENT: Jump");
-            event.accepted = true;
+            //event.accepted = true;
             var impulse = Qt.point(0, -10);
             body.applyLinearImpulse(impulse, body.getWorldCenter());
         }
 
         /* Move Right */
-        else if(event.key == Qt.Key_D) {
+        else if(event.key === Qt.Key_D) {
             console.log("EVENT: Move Right");
-            event.accepted = true;
+            //event.accepted = true;
             body.linearVelocity.x = 2;
         }
 
         /* Move Left */
-        else if(event.key == Qt.Key_A) {
+        else if(event.key === Qt.Key_A) {
             console.log("EVENT: Move Left");
-            event.accepted = true;
+            //event.accepted = true;
             body.linearVelocity.x = -2;
+        }
+    }
+
+    Keys.onReleased: {
+        if (event.isAutoRepeat){
+            return ;
+        }
+
+        /* Stop Moving */
+        if (event.key === Qt.Key_Left || event.key === Qt.Key_Right) {
+            body.linearVelocity.x = 0;
         }
     }
 }
