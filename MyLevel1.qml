@@ -36,11 +36,21 @@ Item {
 
     /* Movable Platform */
     MyPlatform {
+        id: movablePlatform01
         w: 145
         h: 35
         x: 2108
         y: 1049
         imagePath: "qrc:/Image/PlatformA.png"
+
+        SequentialAnimation {
+            running: true
+            loops: Animation.Infinite
+            NumberAnimation { target: movablePlatform01; property: "y"; to: 585; duration: 6500 }
+            PauseAnimation { duration: 2000 }
+            NumberAnimation { target: movablePlatform01; property: "y"; to: 1049; duration: 6500 }
+            PauseAnimation { duration: 2000 }
+        }
     }
 
     MyPlatform {

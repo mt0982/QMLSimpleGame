@@ -23,15 +23,6 @@ Item {
 
         ScreenBoundaries {}
 
-//        Repeater {
-//            model: 8
-//            delegate: MyPlatform {
-//                x: Math.random() * (gameBackground.width - 100);
-//                y: Math.random() * (gameBackground.height);
-//                //rotation: Math.random() * 90;
-//            }
-//        }
-
         /* CLOUD SYSTEM */
         Repeater {
             id: repeater
