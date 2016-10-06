@@ -3,8 +3,8 @@ import Box2D 2.0
 
 PhysicsItem {
     id: platform
-    width: 100
-    height: 20
+    width: 145
+    height: 35
     bodyType: Body.Static
 
     fixtures: Box {
@@ -17,7 +17,7 @@ PhysicsItem {
 
     Image {
         id: platformTexture
-        source: "file:///home/asus/Obrazy/floor.jpg"
+        source: "qrc:/Image/PlatformA.png"
         anchors.fill: parent
     }
 }

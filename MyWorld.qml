@@ -23,13 +23,18 @@ Item {
 
         ScreenBoundaries {}
 
-        Repeater {
-            model: 8
-            delegate: MyPlatform {
-                x: Math.random() * (gameBackground.width - 100);
-                y: Math.random() * (gameBackground.height);
-                //rotation: Math.random() * 90;
-            }
+//        Repeater {
+//            model: 8
+//            delegate: MyPlatform {
+//                x: Math.random() * (gameBackground.width - 100);
+//                y: Math.random() * (gameBackground.height);
+//                //rotation: Math.random() * 90;
+//            }
+//        }
+
+        MyPlatform {
+            x: 230
+            y: 900
         }
 
         MyPlayer {

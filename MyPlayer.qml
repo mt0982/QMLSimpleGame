@@ -11,7 +11,7 @@ PhysicsItem {
     fixedRotation: true
     gravityScale: 0.3
     focus: true                         //Key Event
-    x: 300
+    x: 260
     y: 200
 
     fixtures: Box {
