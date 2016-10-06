@@ -11,5 +11,7 @@
         <file>Image/PlatformB.png</file>
         <file>Image/PlatformC1.png</file>
         <file>Image/PlatformC2.png</file>
+        <file>MyLevel1.qml</file>
+        <file>Image/PlatformD.png</file>
     </qresource>
 </RCC>
