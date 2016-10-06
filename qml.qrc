@@ -13,5 +13,10 @@
         <file>Image/PlatformC2.png</file>
         <file>MyLevel1.qml</file>
         <file>Image/PlatformD.png</file>
+        <file>Image/CloudA.png</file>
+        <file>MyCloud.qml</file>
+        <file>Image/CloudB.png</file>
+        <file>Image/CloudC.png</file>
+        <file>Image/CloudD.png</file>
     </qresource>
 </RCC>
