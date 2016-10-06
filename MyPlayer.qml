@@ -23,6 +23,16 @@ PhysicsItem {
         groupIndex: 1
     }
 
+    /* Keep Center Content */
+    onYChanged: {
+        flickView.contentY = Math.min(flickView.contentHeight - screen.height, Math.max(0, player.y - screen.height / 2))
+    }
+
+    onXChanged: {
+        flickView.contentX = Math.min(flickView.contentWidth - screen.width, Math.max(0, player.x - screen.width / 2))
+    }
+
+    /* Player Texture */
     Image {
         id: playerTexture
         source: "file:///home/asus/Obrazy/jeans.jpg"
@@ -34,7 +44,6 @@ PhysicsItem {
         /* Jump */
         if (event.key === Qt.Key_W) {
             console.log("EVENT: Jump");
-            //event.accepted = true;
             var impulse = Qt.point(0, -10);
             body.applyLinearImpulse(impulse, body.getWorldCenter());
         }
@@ -42,14 +51,12 @@ PhysicsItem {
         /* Move Right */
         else if(event.key === Qt.Key_D) {
             console.log("EVENT: Move Right");
-            //event.accepted = true;
             body.linearVelocity.x = 2;
         }
 
         /* Move Left */
         else if(event.key === Qt.Key_A) {
             console.log("EVENT: Move Left");
-            //event.accepted = true;
             body.linearVelocity.x = -2;
         }
     }
