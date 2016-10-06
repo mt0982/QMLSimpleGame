@@ -2,9 +2,14 @@ import QtQuick 2.0
 import Box2D 2.0
 
 PhysicsItem {
+
+    property string imagePath: " "
+    property int w
+    property int h
+
     id: platform
-    width: 145
-    height: 35
+    width: w
+    height: h
     bodyType: Body.Static
 
     fixtures: Box {
@@ -17,7 +22,7 @@ PhysicsItem {
 
     Image {
         id: platformTexture
-        source: "qrc:/Image/PlatformA.png"
+        source: imagePath //"qrc:/Image/PlatformA.png"
         anchors.fill: parent
     }
 }

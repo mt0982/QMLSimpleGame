@@ -8,5 +8,8 @@
         <file>MyPlayer.qml</file>
         <file>Image/background.jpg</file>
         <file>Image/PlatformA.png</file>
+        <file>Image/PlatformB.png</file>
+        <file>Image/PlatformC1.png</file>
+        <file>Image/PlatformC2.png</file>
     </qresource>
 </RCC>
