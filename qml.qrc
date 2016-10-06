@@ -4,5 +4,7 @@
         <file>PhysicsItem.qml</file>
         <file>ScreenBoundaries.qml</file>
         <file>MyPlatform.qml</file>
+        <file>MyWorld.qml</file>
+        <file>MyPlayer.qml</file>
     </qresource>
 </RCC>
