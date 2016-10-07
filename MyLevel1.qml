@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
+import QtQuick.Particles 2.0
 
 Item {
 
@@ -226,6 +227,82 @@ Item {
             x: parent.width * 0.8
         }
     }
+
+    /* PARTICLE SYSTEM */
+    Image {
+        id: sourceImage
+        x: 0
+        y: gameBackground.height * 0.9
+        source: "file:///home/asus/Pulpit/wave.png"
+        width: gameBackground.width
+        height: 300
+
+        ParticleSystem {
+            id: particles
+            anchors.fill: parent
+
+            ImageParticle {
+                id: bubble
+                anchors.fill: parent
+                source: "file:///home/asus/Pulpit/catch.png"
+                opacity: 0.25
+            }
+
+            Wander {
+                xVariance: 25;
+                pace: 25;
+            }
+
+            Emitter {
+                width: parent.width
+                height: 750
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 3
+                startTime: 15000
+
+                emitRate: 16
+                lifeSpan: 15000
+
+                acceleration: PointDirection { y: -2; xVariation: 4; yVariation: 4 }
+
+                size: 8
+                sizeVariation: 16
+            }
+        }
+    }
+
+    /* WATER */
+    Row {
+        height: gameBackground.height
+        width: gameBackground.width
+
+        Image {
+            id: wave
+            y: gameBackground.height * 0.9
+            source: "file:///home/asus/Pulpit/wave.png"
+            width: gameBackground.width
+        }
+
+        Image {
+            y: gameBackground.height * 0.9
+            source: "file:///home/asus/Pulpit/wave.png"
+            width: gameBackground.width
+        }
+
+        NumberAnimation on x {
+            from: 0
+            to: -(wave.width)
+            duration: 32000
+            loops: Animation.Infinite
+        }
+
+        SequentialAnimation on y {
+            loops: Animation.Infinite
+            NumberAnimation { from: y - 2; to: y + 2; duration: 3200; easing.type: Easing.InOutQuad }
+            NumberAnimation { from: y + 2; to: y - 2; duration: 3200; easing.type: Easing.InOutQuad }
+        }
+    }
+
 }
 
 
