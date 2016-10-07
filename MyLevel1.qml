@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtQuick.Controls 2.0
 
 Item {
 
@@ -115,6 +116,24 @@ Item {
         x: 3215
         y: 1000
         imagePath: "qrc:/Image/PlatformD.png"
+
+        Image {
+            source: "qrc:/Image/Tree/Tree_3.png"
+            anchors.bottom: parent.top
+            x: 10
+        }
+
+        Image {
+            source: "qrc:/Image/Tree/Bush (1).png"
+            anchors.bottom: parent.top
+            x: parent.width * 0.55
+        }
+
+        Image {
+            source: "qrc:/Image/Tree/Bush (3).png"
+            anchors.bottom: parent.top
+            x: parent.width * 0.7
+        }
     }
 
     MyPlatform {
@@ -123,6 +142,29 @@ Item {
         x: 3980
         y: 900
         imagePath: "qrc:/Image/PlatformB.png"
+
+        Image {
+            id: stoneImage
+            source: "qrc:/Image/Tree/Stone.png"
+            anchors.bottom: parent.top
+            x: 25
+            width: 45
+            height: 27
+        }
+
+        Image {
+            source: "qrc:/Image/Tree/Sign_1.png"
+            anchors.bottom: parent.top
+            x: parent.width * 0.82
+
+            Text {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "!!!"
+                font.pixelSize: 18
+                opacity: 0.8
+                y: parent.height * 0.2
+            }
+        }
     }
 
     MyPlatform {
@@ -157,6 +199,18 @@ Item {
         x: 6050
         y: 600
         imagePath: "qrc:/Image/PlatformG1.png"
+
+        Image {
+            source: "qrc:/Image/Tree/Tree_2.png"
+            anchors.bottom: parent.top
+            x: 25
+        }
+
+        Image {
+            source: "qrc:/Image/Tree/Sign_1.png"
+            anchors.bottom: parent.top
+            x: parent.width * 0.7
+        }
     }
 
     MyPlatform {
@@ -165,6 +219,12 @@ Item {
         x: 5668
         y: 981
         imagePath: "qrc:/Image/PlatformG2.png"
+
+        Image {
+            source: "qrc:/Image/Tree/Mushroom_2.png"
+            anchors.bottom: parent.top
+            x: parent.width * 0.8
+        }
     }
 }
 
