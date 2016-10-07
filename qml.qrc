@@ -34,5 +34,6 @@
         <file>Image/Tree/Tree_3.png</file>
         <file>Image/Water/catch.png</file>
         <file>Image/Water/wave.png</file>
+        <file>MyLeafSystem.qml</file>
     </qresource>
 </RCC>

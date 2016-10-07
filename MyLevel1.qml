@@ -1,4 +1,4 @@
-import QtQuick 2.0
+﻿import QtQuick 2.0
 import QtQuick.Controls 2.0
 import QtQuick.Particles 2.0
 
@@ -49,6 +49,12 @@ Item {
             source: "qrc:/Image/Tree/Tree_3.png"
             anchors.bottom: parent.top
             x: parent.width * 0.5
+
+            MyLeafSystem {
+                anchors.fill: parent
+                w: parent.width
+                h: parent.height
+            }
         }
     }
 
@@ -122,6 +128,12 @@ Item {
             source: "qrc:/Image/Tree/Tree_3.png"
             anchors.bottom: parent.top
             x: 10
+
+            MyLeafSystem {
+                anchors.fill: parent
+                w: parent.width
+                h: parent.height
+            }
         }
 
         Image {
@@ -205,6 +217,12 @@ Item {
             source: "qrc:/Image/Tree/Tree_2.png"
             anchors.bottom: parent.top
             x: 25
+
+            MyLeafSystem {
+                anchors.fill: parent
+                w: parent.width
+                h: parent.height
+            }
         }
 
         Image {
