@@ -16,6 +16,12 @@ Item {
         x: 479
         y: 900
         imagePath: "qrc:/Image/PlatformB.png"
+
+        Image {
+            source: "qrc:/Image/Tree/Sign_2.png"
+            anchors.bottom: parent.top
+            x: parent.width * 0.1
+        }
     }
 
     MyPlatform {
@@ -24,6 +30,24 @@ Item {
         x: 1030
         y: 796
         imagePath: "qrc:/Image/PlatformC1.png"
+
+        Image {
+            source: "qrc:/Image/Tree/Bush (2).png"
+            anchors.bottom: parent.top
+            x: parent.width * 0.20
+        }
+
+        Image {
+            source: "qrc:/Image/Tree/Bush (4).png"
+            anchors.bottom: parent.top
+            x: parent.width * 0.15
+        }
+
+        Image {
+            source: "qrc:/Image/Tree/Tree_3.png"
+            anchors.bottom: parent.top
+            x: parent.width * 0.5
+        }
     }
 
     MyPlatform {
@@ -91,6 +115,56 @@ Item {
         x: 3215
         y: 1000
         imagePath: "qrc:/Image/PlatformD.png"
+    }
+
+    MyPlatform {
+        w: 384
+        h: 256
+        x: 3980
+        y: 900
+        imagePath: "qrc:/Image/PlatformB.png"
+    }
+
+    MyPlatform {
+        id: movablePlatform02
+        w: 506
+        h: 74
+        x: 4430
+        y: 900
+        imagePath: "qrc:/Image/PlatformE.png"
+
+        SequentialAnimation {
+            running: true
+            loops: Animation.Infinite
+            NumberAnimation { target: movablePlatform02; property: "x"; to: 5000; duration: 6500 }
+            PauseAnimation { duration: 2000 }
+            NumberAnimation { target: movablePlatform02; property: "x"; to: 4430; duration: 6500 }
+            PauseAnimation { duration: 2000 }
+        }
+    }
+
+    MyPlatform {
+        w: 100
+        h: 100
+        x: 5170
+        y: 770
+        imagePath: "qrc:/Image/PlatformF.png"
+    }
+
+    MyPlatform {
+        w: 640
+        h: 511
+        x: 6050
+        y: 600
+        imagePath: "qrc:/Image/PlatformG1.png"
+    }
+
+    MyPlatform {
+        w: 383
+        h: 128
+        x: 5668
+        y: 981
+        imagePath: "qrc:/Image/PlatformG2.png"
     }
 }
 

@@ -18,5 +18,19 @@
         <file>Image/CloudB.png</file>
         <file>Image/CloudC.png</file>
         <file>Image/CloudD.png</file>
+        <file>Image/PlatformE.png</file>
+        <file>Image/PlatformF.png</file>
+        <file>Image/PlatformG1.png</file>
+        <file>Image/PlatformG2.png</file>
+        <file>Image/Tree/Bush (1).png</file>
+        <file>Image/Tree/Bush (2).png</file>
+        <file>Image/Tree/Bush (3).png</file>
+        <file>Image/Tree/Bush (4).png</file>
+        <file>Image/Tree/Mushroom_2.png</file>
+        <file>Image/Tree/Sign_1.png</file>
+        <file>Image/Tree/Sign_2.png</file>
+        <file>Image/Tree/Stone.png</file>
+        <file>Image/Tree/Tree_2.png</file>
+        <file>Image/Tree/Tree_3.png</file>
     </qresource>
 </RCC>

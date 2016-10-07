@@ -38,7 +38,6 @@ Item {
                     else if(z == -2 || z == 2) path = "qrc:/Image/CloudC.png"
                     else if(z == 0) path = "qrc:/Image/CloudD.png"
                     else path = "qrc:/Image/CloudA.png"
-                    console.log(z)
                 }
             }
         }
