@@ -233,7 +233,7 @@ Item {
         id: sourceImage
         x: 0
         y: gameBackground.height * 0.9
-        source: "file:///home/asus/Pulpit/wave.png"
+        z: 2
         width: gameBackground.width
         height: 300
 
@@ -244,7 +244,7 @@ Item {
             ImageParticle {
                 id: bubble
                 anchors.fill: parent
-                source: "file:///home/asus/Pulpit/catch.png"
+                source: "qrc:/Image/Water/catch.png"
                 opacity: 0.25
             }
 
@@ -279,13 +279,13 @@ Item {
         Image {
             id: wave
             y: gameBackground.height * 0.9
-            source: "file:///home/asus/Pulpit/wave.png"
+            source: "qrc:/Image/Water/wave.png"
             width: gameBackground.width
         }
 
         Image {
             y: gameBackground.height * 0.9
-            source: "file:///home/asus/Pulpit/wave.png"
+            source: "qrc:/Image/Water/wave.png"
             width: gameBackground.width
         }
 
@@ -303,6 +303,77 @@ Item {
         }
     }
 
+    /* CLOUDS */
+    ParticleSystem {
+        anchors.fill: parent
+        z: -2
+
+        ImageParticle {
+            source: "qrc:/Image/CloudD.png"
+            opacity: 0.5
+            alphaVariation: 0.25
+        }
+
+        Wander {
+            xVariance: 300;
+            pace: 1;
+        }
+
+        Emitter {
+            width: gameBackground.width
+            height: gameBackground.height / 2.5
+            //anchors.right: parent.left
+            emitRate: 0.8
+            lifeSpan: 72000
+
+            velocity: PointDirection {
+                x: 16
+                xVariation: 2
+                yVariation: 2
+            }
+
+            size: 64
+            sizeVariation: 128
+        }
+    }
+
+    ParticleSystem {
+        anchors.fill: parent
+        z: 2
+
+        ImageParticle {
+            source: "qrc:/Image/CloudD.png"
+            opacity: 0.5
+            alphaVariation: 0.25
+        }
+
+        Wander {
+            xVariance: 300;
+            pace: 1;
+        }
+
+        Emitter {
+            width: gameBackground.width
+            height: gameBackground.height / 2.5
+            //anchors.right: parent.left
+            emitRate: 0.8
+            lifeSpan: 72000
+
+            velocity: PointDirection {
+                x: 16
+                xVariation: 2
+                yVariation: 2
+            }
+
+            size: 64
+            sizeVariation: 128
+        }
+    }
+
+    /* PLAYER */
+    MyPlayer {
+        id: player
+    }
 }
 
 

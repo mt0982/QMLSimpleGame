@@ -32,5 +32,7 @@
         <file>Image/Tree/Stone.png</file>
         <file>Image/Tree/Tree_2.png</file>
         <file>Image/Tree/Tree_3.png</file>
+        <file>Image/Water/catch.png</file>
+        <file>Image/Water/wave.png</file>
     </qresource>
 </RCC>
