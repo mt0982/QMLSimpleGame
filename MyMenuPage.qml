@@ -9,6 +9,28 @@ Item {
         anchors.centerIn: parent
     }
 
+    /* TITLE */
+    Text {
+        id: gameTitle
+        text: qsTr("Platform Game 2D")
+        font.family: "Homestead"
+        font.pointSize: 48
+        y: parent.height - 100
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
+    DropShadow {
+        anchors.fill: gameTitle
+        horizontalOffset: 8
+        verticalOffset: 8
+        radius: 8.0
+        samples: 17
+        color: "#80000000"
+        source: gameTitle
+        x: 0; y: 0
+    }
+
+    /* MENU ITEMS */
     MyMenuItem {
         id: itemStart
         myX: 80
