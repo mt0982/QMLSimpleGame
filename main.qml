@@ -12,15 +12,15 @@ ApplicationWindow {
 
     property bool status: true
 
-    MyMenuPage {
-        anchors.fill: parent
-        visible: status
-    }
+//    MyMenuPage {
+//        anchors.fill: parent
+//        visible: status
+//    }
 
     MyWorld {
         id: myWorld
         anchors.fill: parent
-        visible: !status
+//        visible: !status
     }
 }
 
