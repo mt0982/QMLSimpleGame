@@ -293,6 +293,7 @@ Item {
     Row {
         height: gameBackground.height
         width: gameBackground.width
+        z: 1
 
         Image {
             id: wave

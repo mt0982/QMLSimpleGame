@@ -11,7 +11,7 @@ Item {
 
         ImageParticle {
             anchors.fill: parent
-            source: "file:///home/asus/Pulpit/leaf2.png"
+            source: "qrc:/Image/Tree/leaf.png"
             autoRotation: true
         }
 

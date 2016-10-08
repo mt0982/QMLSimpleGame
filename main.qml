@@ -10,10 +10,14 @@ ApplicationWindow {
     height: 480
     title: qsTr("Game")
 
-    MyWorld {
-        id: myWorld
+    MyMenuPage{
         anchors.fill: parent
     }
+
+    /*MyWorld {
+        id: myWorld
+        anchors.fill: parent
+    }*/
 }
 
 

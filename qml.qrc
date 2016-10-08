@@ -35,5 +35,12 @@
         <file>Image/Water/catch.png</file>
         <file>Image/Water/wave.png</file>
         <file>MyLeafSystem.qml</file>
+        <file>Image/Tree/leaf.png</file>
+        <file>Image/Menu/background.jpg</file>
+        <file>Image/Menu/cloud4.png</file>
+        <file>Image/Menu/particle.png</file>
+        <file>MyMenuItem.qml</file>
+        <file>MyMenuParticleSystem.qml</file>
+        <file>MyMenuPage.qml</file>
     </qresource>
 </RCC>
