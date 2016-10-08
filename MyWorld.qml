@@ -4,6 +4,8 @@ import QtQuick.Particles 2.0
 
 Item {
 
+    function activePlayer() { level01.activePlayer() }
+
     Flickable {
         id: flickView
         anchors.fill: parent
@@ -25,7 +27,7 @@ Item {
         ScreenBoundaries {}  
 
         MyLevel1 {
-
+            id: level01
         }
     }
 }

@@ -14,6 +14,8 @@ PhysicsItem {
     x: 260
     y: 200
 
+    function activePlayer() { player.focus = true }
+
     fixtures: Box {
         width: player.width
         height: player.height

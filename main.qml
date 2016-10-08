@@ -10,14 +10,18 @@ ApplicationWindow {
     height: 480
     title: qsTr("Game")
 
-    MyMenuPage{
+    property bool status: true
+
+    MyMenuPage {
         anchors.fill: parent
+        visible: status
     }
 
-    /*MyWorld {
+    MyWorld {
         id: myWorld
         anchors.fill: parent
-    }*/
+        visible: !status
+    }
 }
 
 

@@ -390,6 +390,9 @@ Item {
     }
 
     /* PLAYER */
+
+    function activePlayer() { player.activePlayer() }
+
     MyPlayer {
         id: player
     }

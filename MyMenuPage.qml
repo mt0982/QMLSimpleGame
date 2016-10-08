@@ -36,6 +36,8 @@ Item {
         myX: 80
         myY: -700
         optionName: "Start"
+
+        onFocusChanged: console.log("A")
     }
 
     MyMenuItem {
@@ -89,6 +91,7 @@ Item {
 
     /* KEY EVENTS */
     Item {
+        id: keyboard
         focus: true
 
         Keys.onPressed: {
@@ -102,6 +105,34 @@ Item {
                 console.log("Previous");
                 moveUP()
             }
+
+            if (event.key === Qt.Key_Space) {
+                if(index === 2) {
+                    status = !status
+                    myWorld.activePlayer()
+                }
+
+                console.log("Selected: " + index)
+            }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
