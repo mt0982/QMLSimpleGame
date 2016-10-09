@@ -1,31 +1,43 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>MyCloud.qml</file>
+        <file>MyLeafSystem.qml</file>
+        <file>MyLevel1.qml</file>
+        <file>MyMenuItem.qml</file>
+        <file>MyMenuPage.qml</file>
+        <file>MyMenuParticleSystem.qml</file>
+        <file>MyPlatform.qml</file>
+        <file>MyPlayer.qml</file>
+        <file>MyWorld.qml</file>
         <file>PhysicsItem.qml</file>
         <file>ScreenBoundaries.qml</file>
-        <file>MyPlatform.qml</file>
-        <file>MyWorld.qml</file>
-        <file>MyPlayer.qml</file>
         <file>Image/background.jpg</file>
+        <file>Image/CloudA.png</file>
+        <file>Image/CloudB.png</file>
+        <file>Image/CloudC.png</file>
+        <file>Image/CloudD.png</file>
         <file>Image/PlatformA.png</file>
         <file>Image/PlatformB.png</file>
         <file>Image/PlatformC1.png</file>
         <file>Image/PlatformC2.png</file>
-        <file>MyLevel1.qml</file>
         <file>Image/PlatformD.png</file>
-        <file>Image/CloudA.png</file>
-        <file>MyCloud.qml</file>
-        <file>Image/CloudB.png</file>
-        <file>Image/CloudC.png</file>
-        <file>Image/CloudD.png</file>
         <file>Image/PlatformE.png</file>
         <file>Image/PlatformF.png</file>
         <file>Image/PlatformG1.png</file>
         <file>Image/PlatformG2.png</file>
+        <file>Image/Player/Dead.gif</file>
+        <file>Image/Player/Fall.gif</file>
+        <file>Image/Player/Idle.gif</file>
+        <file>Image/Player/Jump.gif</file>
+        <file>Image/Player/Kunai.png</file>
+        <file>Image/Player/Run.gif</file>
+        <file>Image/Player/Slide.gif</file>
         <file>Image/Tree/Bush (1).png</file>
         <file>Image/Tree/Bush (2).png</file>
         <file>Image/Tree/Bush (3).png</file>
         <file>Image/Tree/Bush (4).png</file>
+        <file>Image/Tree/leaf.png</file>
         <file>Image/Tree/Mushroom_2.png</file>
         <file>Image/Tree/Sign_1.png</file>
         <file>Image/Tree/Sign_2.png</file>
@@ -33,21 +45,7 @@
         <file>Image/Tree/Tree_2.png</file>
         <file>Image/Tree/Tree_3.png</file>
         <file>Image/Water/catch.png</file>
+        <file>Image/Water/wave (kopia).png</file>
         <file>Image/Water/wave.png</file>
-        <file>MyLeafSystem.qml</file>
-        <file>Image/Tree/leaf.png</file>
-        <file>Image/Menu/background.jpg</file>
-        <file>Image/Menu/cloud4.png</file>
-        <file>Image/Menu/particle.png</file>
-        <file>MyMenuItem.qml</file>
-        <file>MyMenuParticleSystem.qml</file>
-        <file>MyMenuPage.qml</file>
-        <file>Image/Player/Dead.gif</file>
-        <file>Image/Player/Fall.gif</file>
-        <file>Image/Player/Idle.gif</file>
-        <file>Image/Player/Jump.gif</file>
-        <file>Image/Player/Run.gif</file>
-        <file>Image/Player/Slide.gif</file>
-        <file>Image/Player/Kunai.png</file>
     </qresource>
 </RCC>

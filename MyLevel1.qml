@@ -2,6 +2,7 @@
 import QtQuick.Controls 2.0
 import QtQuick.Particles 2.0
 import QtGraphicalEffects 1.0
+import QtMultimedia 5.6
 
 Item {
 
@@ -423,9 +424,15 @@ Item {
                     repeater.itemAt(i).visible = false
                     counter++
                     console.log(i + ": " + counter)
+                    pickSound.play()
                 }
             }
         }
+    }
+
+    Audio {
+        id: pickSound
+        source: "file:///home/asus/Programy/Qt/Projekty/QMLGame2/Sounds/Pick.wav"
     }
 
     /* RESULT */
