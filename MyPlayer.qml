@@ -33,6 +33,7 @@ PhysicsItem {
     }
 
     onXChanged: {
+        checkCollision(player.x, player.y)
         flickView.contentX = Math.min(flickView.contentWidth - screen.width, Math.max(0, player.x - screen.width / 2))
     }
 

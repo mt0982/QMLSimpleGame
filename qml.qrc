@@ -48,5 +48,6 @@
         <file>Image/Player/Jump.gif</file>
         <file>Image/Player/Run.gif</file>
         <file>Image/Player/Slide.gif</file>
+        <file>Image/Player/Kunai.png</file>
     </qresource>
 </RCC>

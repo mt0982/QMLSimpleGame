@@ -418,7 +418,7 @@ Item {
             var a = x - repeater.itemAt(i).x
             var b = y - repeater.itemAt(i).y
 
-            if(Math.sqrt(a*a + b*b) < 100) {
+            if(Math.sqrt(a*a + b*b) < 80) {
                 if(repeater.itemAt(i).visible === true) {
                     repeater.itemAt(i).visible = false
                     counter++
@@ -428,6 +428,51 @@ Item {
         }
     }
 
+    /* RESULT */
+    Text {
+        id: result
+        x: flickView.contentX + flickView.width - 90
+        y: flickView.contentY + 10
+        text: counter.toString()
+        font.family: "Nyctophobia"
+        font.pointSize: 40
+    }
+
+    Image {
+        width: 8
+        height: 40
+        x: flickView.contentX + flickView.width - 110
+        anchors.verticalCenter: result.verticalCenter
+        source: "qrc:/Image/Player/Kunai.png"
+
+        layer.enabled: true
+        layer.effect: Glow {
+            samples: 15
+            color: "white"
+            transparentBorder: true
+        }
+
+        transform: Rotation {
+            id: rotY
+            origin.x: 4             //Mid Object
+            origin.y: 20
+            angle: 0
+            axis { x: 0; y: 1; z: 0 }
+        }
+
+        NumberAnimation {
+            target: rotY
+            running: true
+            property: "angle"
+            easing.type: Easing.InOutBack
+            from: 0
+            to: 360
+            duration: 2000 + Math.random() * 4000
+            loops: Animation.Infinite
+        }
+    }
+
+    /* RANDOM ELEMENTS */
     Repeater {
         id: repeater
         model: 16
@@ -438,7 +483,7 @@ Item {
             property int index: Math.floor(Math.random() * arrItem.length)
             x: arrItem[index].x + Math.random() * arrItem[index].width
             y: arrItem[index].y - 50
-            source: "file:///home/asus/Pulpit/Kunai.png"
+            source: "qrc:/Image/Player/Kunai.png"
 
             layer.enabled: true
             layer.effect: Glow {
