@@ -125,7 +125,7 @@ PhysicsItem {
 
             /* FALL - PARACHUTE */
             if(player.linearVelocity.y > previousVelocity && previousVelocity > 1) {
-                console.log(player.linearVelocity.y + " " + previousVelocity)
+                //console.log(player.linearVelocity.y + " " + previousVelocity)
                 playerTexture.source = "qrc:/Image/Player/Fall.gif"
                 player.width = 75
                 player.height = 77

@@ -1,10 +1,12 @@
-﻿import QtQuick 2.0
+﻿import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Particles 2.0
+import QtGraphicalEffects 1.0
 
 Item {
 
     MyPlatform {
+        id: firstPlatform
         w: 145
         h: 35
         x: 230
@@ -13,6 +15,7 @@ Item {
     }
 
     MyPlatform {
+        id: secondPlatform
         w: 384
         h: 256
         x: 479
@@ -27,6 +30,7 @@ Item {
     }
 
     MyPlatform {
+        id: thirdPlatform
         w: 638
         h: 382
         x: 1030
@@ -86,6 +90,7 @@ Item {
     }
 
     MyPlatform {
+        id: seventhPlatform
         w: 145
         h: 35
         x: 2275
@@ -94,6 +99,7 @@ Item {
     }
 
     MyPlatform {
+        id: eightPlatform
         w: 145
         h: 35
         x: 2482
@@ -102,6 +108,7 @@ Item {
     }
 
     MyPlatform {
+        id: ninethPlatform
         w: 145
         h: 35
         x: 2678
@@ -118,6 +125,7 @@ Item {
     }
 
     MyPlatform {
+        id: fourthPlatform
         w: 638
         h: 382
         x: 3215
@@ -150,6 +158,7 @@ Item {
     }
 
     MyPlatform {
+        id: fifthPlatform
         w: 384
         h: 256
         x: 3980
@@ -207,6 +216,7 @@ Item {
     }
 
     MyPlatform {
+        id: sixthPlatform
         w: 640
         h: 511
         x: 6050
@@ -395,6 +405,50 @@ Item {
 
     MyPlayer {
         id: player
+    }
+
+    /* ITEMS */
+    property variant arrItem: [firstPlatform, secondPlatform, thirdPlatform, fourthPlatform, fifthPlatform, sixthPlatform,
+                               seventhPlatform, eightPlatform, ninethPlatform]
+
+    Repeater {
+        id: repeater
+        model: 16
+        delegate: MyPlatform {
+            id: kunai
+            w: 8
+            h: 40
+            property int index: Math.floor(Math.random() * arrItem.length)
+            x: arrItem[index].x + Math.random() * arrItem[index].width
+            y: arrItem[index].y - 50
+            imagePath: "file:///home/asus/Pulpit/Kunai.png"
+
+            layer.enabled: true
+            layer.effect: Glow {
+                samples: 15
+                color: "white"
+                transparentBorder: true
+            }
+
+            transform: Rotation {
+                id: rotY
+                origin.x: 4             //Mid Object
+                origin.y: 20
+                angle: 0
+                axis { x: 0; y: 1; z: 0 }
+            }
+
+            NumberAnimation {
+                target: rotY
+                running: true
+                property: "angle"
+                easing.type: Easing.InOutBack
+                from: 0
+                to: 360
+                duration: 2000 + Math.random() * 4000
+                loops: Animation.Infinite
+            }
+        }
     }
 }
 
