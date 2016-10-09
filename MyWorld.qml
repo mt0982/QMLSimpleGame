@@ -22,6 +22,7 @@ Item {
 
         World {
             id: myWorld
+            //gravity: Qt.point(0.0, 9.8);
         }
 
         ScreenBoundaries {}  

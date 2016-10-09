@@ -17,12 +17,12 @@ PhysicsItem {
         height: platform.height
         density: 1
         friction: 0.3
-        restitution: 0.5
+        restitution: 0.0                //Bouncy
     }
 
     Image {
         id: platformTexture
-        source: imagePath //"qrc:/Image/PlatformA.png"
+        source: imagePath
         anchors.fill: parent
     }
 }

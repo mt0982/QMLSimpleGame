@@ -14,14 +14,15 @@ PhysicsItem {
     x: 260
     y: 200
 
+    property int previousVelocity: player.linearVelocity.y
+
     function activePlayer() { player.focus = true }
 
     fixtures: Box {
         width: player.width
         height: player.height
         density: 1
-        friction: 0.3
-        restitution: 0.2
+        friction: 0.6
         groupIndex: 1
     }
 
@@ -45,15 +46,16 @@ PhysicsItem {
 
         /* Jump */
         if (event.key === Qt.Key_W) {
+            if(event.isAutoRepeat) return
             console.log("EVENT: Jump");
-            var impulse = Qt.point(0, -10);
-            body.applyLinearImpulse(impulse, body.getWorldCenter());
+            var impulse = Qt.point(0, -20);
+            body.applyLinearImpulse(impulse, body.getWorldCenter())
         }
 
         /* Move Right */
         else if(event.key === Qt.Key_D) {
             console.log("EVENT: Move Right");
-            body.linearVelocity.x = 2;
+            body.linearVelocity.x = 4;
             playerTexture.source = "qrc:/Image/Player/Run.gif"
             playerTexture.mirror = false
             player.width = 61
@@ -63,11 +65,17 @@ PhysicsItem {
         /* Move Left */
         else if(event.key === Qt.Key_A) {
             console.log("EVENT: Move Left");
-            body.linearVelocity.x = -2;
+            body.linearVelocity.x = -4;
             playerTexture.source = "qrc:/Image/Player/Run.gif"
             playerTexture.mirror = true
             player.width = 61
             player.height = 77
+        }
+
+        /* Stop Moving */
+        if (event.key === Qt.Key_S) {
+            console.log("EVENT: Stop");
+            body.linearVelocity.x = 0;
         }
     }
 
@@ -76,9 +84,19 @@ PhysicsItem {
             return ;
         }
 
-        /* Stop Moving */
-        if (event.key === Qt.Key_Left || event.key === Qt.Key_Right) {
-            body.linearVelocity.x = 0;
+        /* Slide */
+        if (event.key === Qt.Key_D) {
+            playerTexture.source = "qrc:/Image/Player/Slide.gif"
+            playerTexture.mirror = false
+            player.width = 58
+            player.height = 55
+        }
+
+        if (event.key === Qt.Key_A) {
+            playerTexture.source = "qrc:/Image/Player/Slide.gif"
+            playerTexture.mirror = true
+            player.width = 58
+            player.height = 55
         }
     }
 
@@ -88,11 +106,32 @@ PhysicsItem {
         interval: 100
         repeat: true
         onTriggered: {
-             if(player.linearVelocity.x == 0) {
-                 playerTexture.source = "qrc:/Image/Player/Idle.gif"
-                 player.width = 40
-                 player.height = 77
-             }
+
+            /* DEAD */
+            if(player.y > gameBackground.height * 0.9) {
+                playerTexture.source = "qrc:/Image/Player/Dead.gif"
+                player.width = 74
+                player.height = 77
+                parent.focus = false    //END GAME
+                if(playerTexture.currentFrame == 9) playerTexture.paused = true
+            }
+
+            /* IDLE */
+            else if(player.linearVelocity.x == 0) {
+                playerTexture.source = "qrc:/Image/Player/Idle.gif"
+                player.width = 40
+                player.height = 77
+            }
+
+            /* FALL - PARACHUTE */
+            if(player.linearVelocity.y > previousVelocity && previousVelocity > 1) {
+                console.log(player.linearVelocity.y + " " + previousVelocity)
+                playerTexture.source = "qrc:/Image/Player/Fall.gif"
+                player.width = 75
+                player.height = 77
+            }
+
+            previousVelocity = player.linearVelocity.y
         }
     }
 }
