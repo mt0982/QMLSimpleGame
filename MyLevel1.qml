@@ -411,17 +411,34 @@ Item {
     property variant arrItem: [firstPlatform, secondPlatform, thirdPlatform, fourthPlatform, fifthPlatform, sixthPlatform,
                                seventhPlatform, eightPlatform, ninethPlatform]
 
+    property int counter: 0
+    function checkCollision(x,y) {
+
+        for(var i = 0; i < repeater.count; i++) {
+            var a = x - repeater.itemAt(i).x
+            var b = y - repeater.itemAt(i).y
+
+            if(Math.sqrt(a*a + b*b) < 100) {
+                if(repeater.itemAt(i).visible === true) {
+                    repeater.itemAt(i).visible = false
+                    counter++
+                    console.log(i + ": " + counter)
+                }
+            }
+        }
+    }
+
     Repeater {
         id: repeater
         model: 16
-        delegate: MyPlatform {
+        delegate: Image {
             id: kunai
-            w: 8
-            h: 40
+            width: 8
+            height: 40
             property int index: Math.floor(Math.random() * arrItem.length)
             x: arrItem[index].x + Math.random() * arrItem[index].width
             y: arrItem[index].y - 50
-            imagePath: "file:///home/asus/Pulpit/Kunai.png"
+            source: "file:///home/asus/Pulpit/Kunai.png"
 
             layer.enabled: true
             layer.effect: Glow {

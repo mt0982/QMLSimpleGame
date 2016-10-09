@@ -28,6 +28,7 @@ PhysicsItem {
 
     /* Keep Center Content */
     onYChanged: {
+        checkCollision(player.x, player.y)
         flickView.contentY = Math.min(flickView.contentHeight - screen.height, Math.max(0, player.y - screen.height / 2))
     }
 
